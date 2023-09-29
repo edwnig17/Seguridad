@@ -1,12 +1,10 @@
 const jwt = require('jsonwebtoken');
-const Usuario = require('../models/Usuarios.js'); // Asegúrate de que la ruta y el nombre del modelo sean correctos
+const Usuario = require('../models/Usuarios.js'); 
 
-// Función para generar un token JWT
 const generarToken = (usuario) => {
-  // Cargar la clave secreta desde las variables de entorno
-  const secretKey = process.env.JWT_SECRET_KEY; // Reemplaza 'JWT_SECRET_KEY' con el nombre de la variable en tu archivo .env
+  const secretKey = process.env.SECRET_KEY; 
 
-  return jwt.sign({ usuario }, secretKey, { expiresIn: '1h' }); // Caducidad de 1 hora
+  return jwt.sign({ usuario }, secretKey, { expiresIn: '1h' }); 
 };
 
 // Controlador para el inicio de sesión y generación de tokens

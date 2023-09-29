@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const logsController = require('../controllers/logsController.js');
 
-router.get('/info', logsController.info);
-router.get('/warn', logsController.warn);
-router.get('/error', logsController.error);
+router.post('/info', logsController.info);
+router.post('/warn', logsController.warn);
+router.post('/error', logsController.error);
 
 module.exports = router;
